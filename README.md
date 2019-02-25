@@ -1,11 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Tasks
-* Consume JSON data from API endpoint
-  * /api/v1/cards/get_weekly_program_cards/happiness/program-week-1
-* Create _list_ view 
-  * Transform data into a flat list
-  * Sort by the _display_order_ property
-* Create _detail_ view for list items
-* Create a 'favorite' button and add it to the _list_ and _detail_ views
-* Create a 'delete' button and add it to the _list_ and _detail_ views
+* Create a 'ContentList' component and populate it with data from an API endpoint
+  * For each list item, print the display_order, header, and "type"
+  * Sort the list by the display_order property
+* Create a 'ContentDetails' component for viewing items from the ContentList
+  * Print the header and body, and display the thumbnail image
+  * This component must have a URL for direct linking
+* Create a 'FavoriteButton' component and a
+  * Add it to the ContentList and ContentDetails components
+  * Hook the FavoriteButton to the Redux store for a "Favorites List" (A reducer is provided in index.js)
