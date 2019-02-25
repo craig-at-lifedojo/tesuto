@@ -14,10 +14,10 @@ const favoritesReducer = (state = {favorites:[]}, action) => {
     return state
 };
 
-const updateFavoritesActionCreator = (id=0) => ({
-    type: 'UPDATE_FAVORITES',
-    id
-});
+// const updateFavoritesActionCreator = (id=0) => ({
+//     type: 'UPDATE_FAVORITES',
+//     id
+// });
 
 const reducers = combineReducers({favoritesReducer: favoritesReducer})
 const store = createStore(reducers);
