@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import ContentList from './components/contentList';
 
 const listContainerStyle = {
   padding: '30px',
@@ -33,7 +34,7 @@ class App extends Component {
               <h3>
                 Here is you're Week 1 training list!
               </h3>
-
+   			 <ContentList />
               <ul>
                 <li>Lorem</li>
                 <li>Ipsum</li>

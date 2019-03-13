@@ -14,12 +14,23 @@ const favoritesReducer = (state = {favorites:[]}, action) => {
     return state
 };
 
+const programsReducer = (state = {programs:[]}, action) => {
+    switch (action.type) {
+      case 'LOAD_USER_PROGRAM':
+        return Object.assign({}, state, {
+        	programs: action.payload,
+        });
+   	  default: 
+      	return state;
+    }
+};
+
 // const updateFavoritesActionCreator = (id=0) => ({
 //     type: 'UPDATE_FAVORITES',
 //     id
 // });
 
-const reducers = combineReducers({favoritesReducer: favoritesReducer})
+const reducers = combineReducers({favoritesReducer: favoritesReducer, programsReducer: programsReducer})
 const store = createStore(reducers);
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
