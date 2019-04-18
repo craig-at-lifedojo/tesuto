@@ -1,26 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import registerServiceWorker from "./registerServiceWorker";
 
-import { createStore, combineReducers } from 'redux'
-import { Provider } from 'react-redux'
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import ReduxThunk from "redux-thunk";
 
-const favoritesReducer = (state = {favorites:[]}, action) => {
-    if (action.type === 'UPDATE_FAVORITES'){
-        // TODO
-    }
-    return state
-};
+import { reducers } from "./reducers";
 
-// const updateFavoritesActionCreator = (id=0) => ({
-//     type: 'UPDATE_FAVORITES',
-//     id
-// });
+const store = createStore(reducers, applyMiddleware(ReduxThunk));
 
-const reducers = combineReducers({favoritesReducer: favoritesReducer})
-const store = createStore(reducers);
-
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("root")
+);
 registerServiceWorker();

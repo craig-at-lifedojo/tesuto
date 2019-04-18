@@ -10,3 +10,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Create a 'FavoriteButton' component and a
   * Add it to the ContentList and ContentDetails components
   * Hook the FavoriteButton to the Redux store for a "Favorites List" (A reducer is provided in index.js)
+
+
+  https://dojocms.lifedojo.com/api/v1/cards/get_weekly_program_cards/happiness/program-week-1
